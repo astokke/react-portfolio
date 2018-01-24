@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import Header from './Header';
+import Footer from './Footer';
+
+import UserApp from './UserApp/UserApp';
 
 class App extends Component {
   render() {
     return (
-      <p> boom </p>
-    );
+      <div>
+        <Header />
+        <UserApp />
+        <Footer />
+      </div>
+    )
   }
 }
 
-export default Root;
+export default App;

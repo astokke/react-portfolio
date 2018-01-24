@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 class Header extends Component {
   render() {
     return (
-      <p> boom </p>
+        <div> 
+            <ul className="nav">
+                <li><a>About</a></li>
+                <li><a>Memory</a></li>
+                <li><a>Users</a></li>
+                <li><a>OMDB</a></li>
+            </ul>
+        </div> 
     );
   }
 }
