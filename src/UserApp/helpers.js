@@ -1,9 +1,18 @@
-function getRandomUser() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://www.codecademy.com/", false);
+export function getRandomUser() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://randomuser.me/api/?nat=us&inc=name,gender,email,phone,picture", false);
     xhr.send();
-    
-    console.log(xhr.status);
-    console.log(xhr.statusText);
+
+    const response = JSON.parse(xhr.responseText).results[0];
+    const user = {
+        firstName:  response.name.first,
+        lastName:   response.name.last,
+        gender:     response.gender,
+        email:      response.email,
+        phone:      response.phone,
+        pic:        response.picture.large
+    }
+
+    return user;
 
 }
