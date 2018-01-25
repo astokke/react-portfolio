@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import User from './User';
-import UserList from './UserList';
+import EditUser from './EditUser';
 import {getRandomUser} from '../../helpers';
 
 class UserApp extends Component {
   constructor() {
     super()
     this.addRandomUser = this.addRandomUser.bind(this)
+    this.toggleSelected = this.toggleSelected.bind(this);
+    this.updateUser = this.updateUser.bind(this);
     this.state = {
-      users: {}
+      users: {},
+      selected: ``
     }
   }
 
@@ -29,24 +32,49 @@ class UserApp extends Component {
 
   }
 
+  toggleSelected(key) {
+    this.setState({selected: key});
+  }
+
   addRandomUser(){
     const users = {...this.state.users};
-    console.log(Object.keys(users).length);
-    if(Object.keys(users).length >= 5) {
-      console.log('Limited to five users. Delete older users to add a new one');
-      return; 
-    }
-
     const user = getRandomUser();
     const timestamp = Date.now();
-    users[`user-${timestamp}`] = user;
+
+    let newUsers = {};
+    newUsers[`user-${timestamp}`] = user;
+    newUsers = {...newUsers, ...users};
+
+    this.setState({ users: newUsers});
+  }
+
+  updateUser(key, updatedUser) {
+    const users = {...this.state.users};
+
+    users[key] = updatedUser;
+
     this.setState({users});
   }
   render() {
     return (
-      <div>
-        <UserList />
-        <User addRandomUser={this.addRandomUser}/>
+      <div className="user-app">
+        <div className="users">
+          <h2 className="user-header">Users</h2>
+            <ul className="list-of-users">
+                {
+                    Object.keys(this.state.users)
+                    .map(key => <User 
+                                key={key} 
+                                index={key} 
+                                toggleSelected={this.toggleSelected} 
+                                details={this.state.users[key]}
+                                />)
+                }
+            </ul>
+        </div>
+        <div className="users">
+          <EditUser addRandomUser={this.addRandomUser} users={this.state.users} updateUser={this.updateUser} selected={this.state.selected}/>
+        </div>
       </div>
     )
   }

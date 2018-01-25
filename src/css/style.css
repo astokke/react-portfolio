@@ -41,16 +41,102 @@ li {
 /* FOOTER STYLE */
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    position: relative;
     width: 100%;
     text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
 }
 .footer-line {
     width: 80%;
     border-top: solid 1px black;
+}
+
+/*USER APP STYLE*/
+.user-app {
+    border: 1px solid black;
+    display:flex;
+    justify-content: space-around;
+    padding: 2%;
+    margin: 2%;
+}
+
+.users {
+    border: 3px solid black;
+    width: 40%;
+    max-width: 550px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+
+.user-header {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.user {
+    display: flex;
+    border: 3px solid black;
+    margin: 2%;
+    margin-bottom: 0;
+    border-radius: 15px;
+    
+}
+
+.user img{
+    flex:0;
+    border: 3px solid black;
+    margin: 2%;
+    border-radius: 30%;
+    height: auto;
+    width: auto;
+}
+
+.name {
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid grey;
+    margin-bottom: 3px;
+    align-content: center;
+}
+
+.details {
+    width: 66%;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contact {
+    font-size: 10px;
+    color: red;
+    margin: 3px;
+
+}
+
+
+.icon {
+    color:blue;
+    font-size: 30px;
+    font-family: serif;
+    font-weight: bold;
+  
+}
+
+.list-of-users {
+    display:flex;
+    flex-direction: column;
+    padding-left: 0px;
+}
+
+
+.user-list {
+
+}
+
+.edit-user {
+  
 }
 
