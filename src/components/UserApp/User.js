@@ -5,6 +5,7 @@ class User extends Component {
   render() {
     return (
       <div>
+        <button onClick={this.props.addRandomUser}> Add random user</button>
       </div>
     )
   }
