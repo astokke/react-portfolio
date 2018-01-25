@@ -40,11 +40,16 @@ class EditUser extends React.Component {
         const user = this.props.users[this.props.selected];
 
         if(!user){
-            return <div> no </div>
+            return  (
+            <div> no 
+                <button onClick={this.props.addRandomUser}>Add Random User</button>
+            </div>
+            )
         } else {
             return (
             <div>
                 {this.renderUser(this.props.selected)}
+                <button onClick={this.props.addRandomUser}>Add Random User</button>
             </div>
         )
         }

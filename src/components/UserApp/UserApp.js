@@ -9,6 +9,8 @@ class UserApp extends Component {
     this.addRandomUser = this.addRandomUser.bind(this)
     this.toggleSelected = this.toggleSelected.bind(this);
     this.updateUser = this.updateUser.bind(this);
+    this.removeUser = this.removeUser.bind(this);
+
     this.state = {
       users: {},
       selected: ``
@@ -55,6 +57,13 @@ class UserApp extends Component {
 
     this.setState({users});
   }
+
+  removeUser(key) {
+    const users = {...this.state.users};
+    delete users[key];
+    this.setState({users});
+  }
+
   render() {
     return (
       <div className="user-app">
@@ -68,6 +77,7 @@ class UserApp extends Component {
                                 index={key} 
                                 toggleSelected={this.toggleSelected} 
                                 details={this.state.users[key]}
+                                removeUser={this.removeUser}
                                 />)
                 }
             </ul>
