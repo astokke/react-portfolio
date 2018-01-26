@@ -25,15 +25,14 @@ class User extends Component {
             <span className="name">{details.firstName} {details.lastName} <span className="icon"> {gender} </span> </span>
             <span className="contact">{details.email}</span>
             <span className="contact">{details.phone}</span>
-            <div className="user-buttons">
-              <a onClick={() => this.props.toggleSelected(this.props.index)}><i className="fas fa-edit"></i></a>
-              <a onClick={() => this.props.removeUser(this.props.index)}><i className="fas fa-trash-alt"></i></a>
-            </div>
           </div>
+          <div className="user-buttons">
+              <span><i className="fas fa-edit" onClick={() => this.props.toggleSelected(this.props.index)}></i></span>
+              <span><i className="fas fa-trash-alt" onClick={() => this.props.removeUser(this.props.index)}></i></span>
+            </div>
         </li>  
     )
   }
-
 }
 
 export default User;

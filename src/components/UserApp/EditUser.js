@@ -21,38 +21,57 @@ class EditUser extends React.Component {
     renderUser(key) {
         const user = this.props.users[key];
         return(
-            <div className="user-edit" key={key}>
-                <h2 className="user-header"> Edit User </h2>
-                <input type="text" name="firstName" value={user.firstName}   onChange={(e) => this.handleChange(e, key)} placeholder="Firstname"/>  
-                <input type="text" name="lastName" value={user.lastName}  onChange={(e) => this.handleChange(e, key)} placeholder="Lastname"/>
+            <div key={key}>
+                <h2 className="user-header"> Edit User </h2> <br />
+                <span className="edit-user-line"> 
+                    <label htmlFor="firstName">First name</label>
+                    <input type="text" name="firstName" value={user.firstName}   onChange={(e) => this.handleChange(e, key)} placeholder="Firstname"/>
+                </span>
+                <span className="edit-user-line"> 
+                    <label htmlFor="lastName">Last name</label>
+                    <input type="text" name="lastName" value={user.lastName}  onChange={(e) => this.handleChange(e, key)} placeholder="Lastname"/>
+                </span>
+                <span className="edit-user-line"> 
+                    <label htmlFor="email">Email</label>
+                    <input type="text" name="email" value={user.email}  onChange={(e) => this.handleChange(e, key)} placeholder=">Email"/>
+                </span>
+                <span className="edit-user-line"> 
+                    <label htmlFor="phone">Phone</label>
+                    <input type="text" name="phone" value={user.phone}  onChange={(e) => this.handleChange(e, key)} placeholder=">Phone"/>
+                </span>
+                <span className="edit-user-line"> 
+                        <label htmlFor="gender">Gender</label>
+                    <select type="text" name="gender" value={user.gender}  onChange={(e) => this.handleChange(e, key) }placeholder="Gender">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="neutral">Neutral</option>
+                    </select>
+                </span>
+               
 
-                <select type="text" name="gender" value={user.gender}  onChange={(e) => this.handleChange(e, key) }placeholder="Gender">
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    <option value="neutral">Neutral</option>
-                </select> 
-                <input type="text" name="email" value={user.email}  onChange={(e) => this.handleChange(e, key)} placeholder=">Email"/>
-                <input type="text" name="phone" value={user.phone}  onChange={(e) => this.handleChange(e, key)} placeholder=">Phone"/>
             </div>
         )
     }
     render() {
         const user = this.props.users[this.props.selected];
-
+        let editUser;
         if(!user){
-            return  (
-            <div> no 
-                <button onClick={this.props.addRandomUser}>Add Random User</button>
+            editUser = '';
+        } else {
+            editUser = this.renderUser(this.props.selected);
+        }
+
+        return  (
+            <div className="user-edit"> 
+                {editUser} 
+                <br /> 
+                <br /> 
+                <p className="adduser-text">Need more data?</p> 
+                <p className="adduser-text">Click below to add a random user. </p> 
+                <p className="adduser-text">User added to the top of the list. </p> 
+                <span className="addUser" onClick={this.props.addRandomUser}>Add Random User</span>
             </div>
             )
-        } else {
-            return (
-            <div>
-                {this.renderUser(this.props.selected)}
-                <button onClick={this.props.addRandomUser}>Add Random User</button>
-            </div>
-        )
-        }
             
     }
 }
