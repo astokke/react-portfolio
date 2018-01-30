@@ -61,11 +61,11 @@ li {
 
 .users {
     border: 3px solid black;
-    width: 40%;
-    max-width: 550px;
+    min-width: 550px;
     display:flex;
     flex-direction: column;
     align-content: center;
+    min-height: 450px;
 
 }
 
@@ -81,10 +81,24 @@ li {
     margin: 2%;
     margin-bottom: 0;
     border-radius: 15px;
+    min-width: 500px;
     
 }
+.user-buttons {
+    position: relative;
+    display:inline;
+}
 
-.user-buttons a:hover{
+.user-buttons i{
+    cursor:pointer;
+    pointer-events: auto;
+    height: 15px;
+    margin: 5px 0 5px 0;
+}
+
+.user-buttons i:hover {
+    font-size: 20px;
+    transition: 0.2s;
 }
 .user img{
     flex:0;
@@ -118,7 +132,6 @@ li {
 
 }
 
-
 .icon {
     color:blue;
     font-size: 30px;
@@ -131,4 +144,46 @@ li {
     display:flex;
     flex-direction: column;
     padding-left: 0px;
+}
+
+.addUser {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    display: block;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+.addUser:hover {
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+}
+
+.user-edit {
+    margin-left: 20px;
+    font-size: 15px;
+    position: fixed;
+}
+
+.edit-user-line {
+    margin: 0 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+    border-bottom: 3px solid black;
+}
+
+.edit-user-line input, select {
+    border: 2px solid black;
+    height: 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding-left: 3px;
+}
+
+.adduser-text {
+    text-align: center;
 }

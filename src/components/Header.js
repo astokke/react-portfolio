@@ -5,10 +5,10 @@ class Header extends Component {
     return (
         <div> 
             <ul className="nav">
-                <li><a>About</a></li>
+                <li><a onClick={() => this.props.changeCurrentPage('About')}>About</a></li>
                 <li><a>Memory</a></li>
-                <li><a>Users</a></li>
-                <li><a>OMDB</a></li>
+                <li><a onClick={() => this.props.changeCurrentPage('Users')}> Users </a></li>
+                <li><a onClick={() => this.props.changeCurrentPage('OMDB')}>OMDB</a></li>
             </ul>
         </div> 
     );
