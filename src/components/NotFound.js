@@ -5,7 +5,7 @@ class NotFound extends Component {
     return (
       <div className="notFound-wrapper">
         <div className="notFound-cont">
-            <img className="notFound-img" src="https://i.imgur.com/qFIZLrj.png"/> 
+            <img className="notFound-img" alt="Not found" src="https://i.imgur.com/qFIZLrj.png"/> 
             <span className="notFound-text"> Page not found! </span>
         </div>
       </div>
