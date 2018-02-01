@@ -13,17 +13,12 @@ import OMDBApp from './OMDBApp/OMDBApp';
 class App extends Component {
   constructor() {
     super();
-    this.changeCurrentPage = this.changeCurrentPage.bind(this);
-    this.renderPage = this.renderPage.bind(this);
     this.state =  {
       currentPage : ``
     }
 
   }
-
-  changeCurrentPage(page) {
-    this.setState({currentPage: page})
-  }
+ 
 
   render() {
     return (

@@ -53,6 +53,31 @@ li {
     border-top: solid 1px black;
 }
 
+
+/* NOT FOUND*/
+.notFound-wrapper {
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+.notFound-cont {
+    display:flex;
+    flex-direction: column;
+
+}
+
+.notFound-cont img{
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+.notFound-cont span{
+    margin-top: 10%;
+    font-size: 25px;
+    margin-bottom: 40%;
+}
+
 /*USER APP STYLE*/
 .user-app {
     border: 1px solid black;

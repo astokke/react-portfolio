@@ -25,19 +25,19 @@ class EditUser extends React.Component {
                 <h2 className="user-header"> Edit User </h2> <br />
                 <span className="edit-user-line"> 
                     <label htmlFor="firstName">First name</label>
-                    <input type="text" name="firstName" value={user.firstName}   onChange={(e) => this.handleChange(e, key)} placeholder="Firstname"/>
+                    <input type="text" maxlength="15" name="firstName" value={user.firstName}   onChange={(e) => this.handleChange(e, key)} placeholder="Firstname"/>
                 </span>
                 <span className="edit-user-line"> 
                     <label htmlFor="lastName">Last name</label>
-                    <input type="text" name="lastName" value={user.lastName}  onChange={(e) => this.handleChange(e, key)} placeholder="Lastname"/>
+                    <input type="text" maxlength="15" name="lastName" value={user.lastName}  onChange={(e) => this.handleChange(e, key)} placeholder="Lastname"/>
                 </span>
                 <span className="edit-user-line"> 
                     <label htmlFor="email">Email</label>
-                    <input type="text" name="email" value={user.email}  onChange={(e) => this.handleChange(e, key)} placeholder=">Email"/>
+                    <input type="text" maxlength="30" name="email" value={user.email}  onChange={(e) => this.handleChange(e, key)} placeholder=">Email"/>
                 </span>
                 <span className="edit-user-line"> 
                     <label htmlFor="phone">Phone</label>
-                    <input type="text" name="phone" value={user.phone}  onChange={(e) => this.handleChange(e, key)} placeholder=">Phone"/>
+                    <input type="text" maxlength="20" name="phone" value={user.phone}  onChange={(e) => this.handleChange(e, key)} placeholder=">Phone"/>
                 </span>
                 <span className="edit-user-line"> 
                         <label htmlFor="gender">Gender</label>
