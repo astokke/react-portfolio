@@ -8,7 +8,7 @@ class SearchBar extends Component {
     this.state = { term: randomMovie() };
   }
   componentWillMount() {
-    //this.props.onSearchTermChange(this.state.term);
+    this.props.onSearchTermChange(this.state.term);
   }
   render() {
     return (
@@ -23,7 +23,7 @@ class SearchBar extends Component {
 
   onInputChange(term) {
     this.setState({ term });
-   // this.props.onSearchTermChange(term);
+    this.props.onSearchTermChange(term);
   }
 }
 

@@ -7,8 +7,11 @@ class Movie extends Component {
 
     }
     renderMovie(movie) {
+        const favClass = this.props.isFavoriteMovie(movie.imdbID) ? 'fas fa-heart favorite' : 'far fa-heart favorite';
+        console.log(favClass);
         return (
             <div className="movie">
+            <i className={favClass} onClick={() => this.props.toggleFavorite(movie)}></i>
             <span className="titleWrapper">
                     <span className="movieTitle">{movie.Title} ({movie.Year})</span>
                     <span className="movieDirector">Directed By {movie.Director}</span>
@@ -16,9 +19,6 @@ class Movie extends Component {
                 <span>
                     <img className="poster" src={movie.Poster} alt={movie.Title} />
                 </span>
-
-
-              
                     <span className="moviePlot">{movie.Plot}</span>
                 <div className="info">
                     <span> 
@@ -33,9 +33,8 @@ class Movie extends Component {
                 </div>
             </div>
     )
-
     }
-
+    
     movieNotFound() {
         return (
              <div className="movie"> 
@@ -55,3 +54,7 @@ class Movie extends Component {
     }
 }
 export default Movie;
+
+
+// <i class="far fa-heart"></i>
+// <i class="fas fa-heart"></i>

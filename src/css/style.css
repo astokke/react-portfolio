@@ -296,3 +296,10 @@ li {
 .movie-not-found{
     font-size: 25px;
 }
+
+.favorite {
+    position:absolute;
+    font-size: 50px;
+    color: red;
+    cursor: pointer;
+}
