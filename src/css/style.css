@@ -216,6 +216,7 @@ li {
     text-align: center;
 }
 
+/*OMDB APP STYLES*/
 
 
 /*SEARCH BAR STYLE*/
@@ -231,4 +232,67 @@ li {
     text-align:center;
     margin: 2%;
     display: block;
+}
+
+/* DISPLAY MOVIE */ 
+
+.flag{
+    height: 15px;
+    width: auto;
+    border: 1px solid black;
+}
+.movie-wrapper {
+    display:flex;
+    justify-content: center;
+}
+.movie {
+    font-size: 10px;
+    text-align: center;
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    width: 40%;
+    border: 1px solid black;
+}
+
+.movieTitle {
+    font-size: 20px;
+}
+.titleWrapper {
+    text-align: center;
+}
+.movieDirector {
+    display:block;
+    margin-top: 5px;
+}
+
+.genre{
+    margin: 5px;
+}
+
+.poster {
+    height: 300px;
+    width: auto;
+    border: 3px solid black;
+    margin: 10px;
+}
+
+.rating{
+    display:flex;
+    flex-direction: column;
+}
+.votes{
+    margin-top: 5px;
+    font-size: 7px;
+}
+
+.info {
+    display:flex;
+    font-size: 8px;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.movie-not-found{
+    font-size: 25px;
 }

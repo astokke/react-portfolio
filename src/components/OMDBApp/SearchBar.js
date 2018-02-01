@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import { randomMovie } from '../../helpers'
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { term: "" };
+    this.state = { term: randomMovie() };
   }
-
+  componentWillMount() {
+    //this.props.onSearchTermChange(this.state.term);
+  }
   render() {
     return (
       <div className="search-bar">
@@ -20,7 +23,7 @@ class SearchBar extends Component {
 
   onInputChange(term) {
     this.setState({ term });
-    this.props.onSearchTermChange(term);
+   // this.props.onSearchTermChange(term);
   }
 }
 

@@ -17,15 +17,14 @@ export function getRandomUser() {
 
 }
 
-
-
 export function SearchMovie(title) {
 
     const xhr = new XMLHttpRequest();
-    xhr.open(`GET`, `http://www.omdbapi.com/?apikey=4c73fc32&t=${title}`, false);
+    xhr.open(`GET`, `http://www.omdbapi.com/?apikey=4c73fc32&type=movie&t=${title}`, false);
     xhr.send();
 
     const response = JSON.parse(xhr.responseText);
+    console.log(response);
     const movie = {
         Title:      response.Title,
         Year:       response.Year,
@@ -35,10 +34,29 @@ export function SearchMovie(title) {
         Country:    response.Country,
         Poster:     response.Poster,
         imdbRating: response.imdbRating,
-        imdbVotes:  response.imdbVotes
+        imdbVotes:  response.imdbVotes,
+        imdbID:     response.imdbID,
+        Response:   response.Response
     }
 
     return movie;
+}
 
 
+export function randomMovie() {
+    const movies = [
+            "Waking Life",        
+            "Fantastic Planet",
+            "Stalker",        
+            "Ponyo",        
+            "Star Wars: Episode IV",        
+            "Blade Runner",        
+            "Dr. Strangelove",        
+            "Akira",        
+            "THX 1138"       
+    ]
+
+    const movie = movies[Math.floor(Math.random()*movies.length)];
+
+    return movie;
 }
