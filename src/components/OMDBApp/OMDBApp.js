@@ -49,7 +49,7 @@ class OMDBApp extends Component {
   }
 
   movieSearch(term) {
-    fetch(`http://www.omdbapi.com/?apikey=4c73fc32&type=movie&t=${term}`) 
+    fetch(`https://www.omdbapi.com/?apikey=4c73fc32&type=movie&t=${term}`) 
     .then(result=>result.json())
     .catch(error => console.error('Error:', error))
     .then(response => {
