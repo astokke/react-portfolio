@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 import SearchBar from './SearchBar';
 import Movie from './Movie';
+import ListMovie from './ListMovie';
 
 class OMDBApp extends Component {
   constructor() {
@@ -21,19 +22,19 @@ class OMDBApp extends Component {
     }
   }
 
-  // for development
+
   componentWillMount() {
-    const localStorageRef = localStorage.getItem(`movie`);
+    const localStorageRef = localStorage.getItem(`movies`);
     if(localStorageRef) {
       this.setState({
-        movie: JSON.parse(localStorageRef)
+        movies: JSON.parse(localStorageRef)
       });
     } 
        
   }
-  // for development
+
   componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem(`movie`, JSON.stringify(nextState.movie));
+    localStorage.setItem(`movies`, JSON.stringify(nextState.movies));
   }
 
   movieSearch(term) {
@@ -53,9 +54,9 @@ class OMDBApp extends Component {
 
   // Add Movie to Favorites
   addToFavorites(movie) {
-    const movies = {...movies};
+    const movies = {...this.state.movies};
     const favorites = this.state.favorites;
-
+    console.log(movies);
     movies[`movie-${movie.imdbID}`] = movie;
     favorites.push(movie.imdbID);
     this.setState({movies});
@@ -87,10 +88,19 @@ class OMDBApp extends Component {
 
     return (
       <div >
-          <SearchBar onSearchTermChange={movieSearch} />
+        <SearchBar onSearchTermChange={movieSearch} />
         <div className="movie-wrapper">
           <Movie movie={this.state.movie} favorite={this.state.favorite} isFavoriteMovie={this.isFavoriteMovie} toggleFavorite={this.toggleFavorite}/>
-          <div className="movie-list"> List </div>
+          <div className="movie-list">
+                {
+                    Object.keys(this.state.movies)
+                    .map(key => <ListMovie
+                                key={key}
+                                movie={this.state.movies[key]} 
+                                movieSearch={movieSearch}
+                                />)
+                }
+            </div>
         </div>
       </div>
     )
