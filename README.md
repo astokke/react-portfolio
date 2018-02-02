@@ -3,7 +3,7 @@
 This is a small application to showcase some of my potential as a full-stack developer.
 
 
-#Authors
+# Authors
 
 Myself ( André Stokke )
 
