@@ -102,6 +102,14 @@ class OMDBApp extends Component {
     
     return (
       <div >
+        <div className="description"> 
+          <p>
+            Implementing the <a href="https://www.omdbapi.com/"> OMDBApi</a> to create a small app for making a list of your favorite movies. 
+          </p>
+          <p> 
+            Use the search bar to search for movies, and favorite them by clicking the heart icon.
+          </p>
+        </div>
         <SearchBar term={this.state.term} movieSearch={videoSearch}/>
         <div className="movie-wrapper">
           <Movie movie={this.state.movie} favorite={this.state.favorite} isFavoriteMovie={this.isFavoriteMovie} toggleFavorite={this.toggleFavorite}/>

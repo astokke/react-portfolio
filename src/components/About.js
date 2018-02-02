@@ -10,7 +10,7 @@ class About extends Component {
             <span><p className="greet"> Hi! </p>
               <p>This site is made to showcase some of my potential as an aspiring full-stack web developer.  </p> 
             </span>
-            <img className="portrait" src="https://i.imgur.com/woBUnYu.png" />
+            <img className="portrait" alt="me" src="https://i.imgur.com/woBUnYu.png" />
           </span>
           <p className="second">
             It is powered by ReactJS; coding and design is done by me.

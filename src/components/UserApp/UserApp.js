@@ -66,6 +66,15 @@ class UserApp extends Component {
 
   render() {
     return (
+      <div>
+        <div className="description"> 
+            <p>
+              Small app for adding and editing users. Click the 'Add Random User' button to add a new user.
+            </p>
+            <p> 
+              Using the <a href="https://randomuser.me/">randomuser.me API</a> to create random users. 
+            </p>
+        </div>
       <div className="user-app">
         <div className="users">
           <h2 className="user-header">Users</h2>
@@ -85,6 +94,7 @@ class UserApp extends Component {
         <div className="users">
           <EditUser addRandomUser={this.addRandomUser} users={this.state.users} updateUser={this.updateUser} selected={this.state.selected}/>
         </div>
+      </div>
       </div>
     )
   }

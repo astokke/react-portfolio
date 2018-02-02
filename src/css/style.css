@@ -29,6 +29,7 @@ li {
     display: inline;
 }
 
+
 .nav a{
     text-decoration: none;
     color:black;
@@ -36,6 +37,7 @@ li {
     cursor:pointer;
     width: 100px;
     border-radius: 5pX;
+        border: 2px solid black;
     text-align: center;
     padding: 10px;
 }
@@ -367,4 +369,11 @@ li {
  .greet {
      font-size: 20px;
      margin-bottom: 2%;
+ }
+
+ .description {
+     border: 3px solid black;
+     display: flex;
+     flex-direction: column;
+     text-align: center;
  }

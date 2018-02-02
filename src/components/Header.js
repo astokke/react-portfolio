@@ -6,9 +6,9 @@ class Header extends Component {
     return (
         <div> 
                 <ul className="nav">
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/users">Users</Link></li>
-                    <li><Link to="/omdb">OMDB</Link></li>
+                    <li className="header-link"><Link to="/about">About</Link></li>
+                    <li className="header-link"><Link to="/users">Users</Link></li>
+                    <li className="header-link"><Link to="/omdb">Movie List</Link></li>
                 </ul>
         </div> 
     );
