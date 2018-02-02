@@ -47,14 +47,9 @@ class Movie extends Component {
 
     render() {
         const { movie } = this.props;
-        
         if(movie.Response === "True") {
             return this.renderMovie(movie);
         }else return this.movieNotFound();
     }
 }
 export default Movie;
-
-
-// <i class="far fa-heart"></i>
-// <i class="fas fa-heart"></i>

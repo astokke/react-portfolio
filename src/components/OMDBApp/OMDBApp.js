@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {SearchMovie} from '../../helpers';
 import { randomMovie } from '../../helpers';
 import _ from 'lodash';
 
@@ -50,8 +49,26 @@ class OMDBApp extends Component {
   }
 
   movieSearch(term) {
-    const movie = SearchMovie(term);
-    this.setState({ movie });
+    fetch(`http://www.omdbapi.com/?apikey=4c73fc32&type=movie&t=${term}`) 
+    .then(result=>result.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => {
+        const movie = {
+            Title:      response.Title,
+            Year:       response.Year,
+            Genre:      response.Genre,
+            Director:   response.Director,
+            Plot:       response.Plot,
+            Country:    response.Country,
+            Poster:     response.Poster,
+            imdbRating: response.imdbRating,
+            imdbVotes:  response.imdbVotes,
+            imdbID:     response.imdbID,
+            Response:   response.Response
+        }
+
+       this.setState({movie});
+    });
   }
 
   // Check if movie is favorited, and either add or remove it from the list. 
