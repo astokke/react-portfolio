@@ -19,12 +19,11 @@ export function getRandomUser() {
 
 export function SearchMovie(title) {
 
-    const xhr = new XMLHttpRequest();
-    xhr.open(`GET`, `http://www.omdbapi.com/?apikey=4c73fc32&type=movie&t=${title}`, false);
-    xhr.send();
 
-    const response = JSON.parse(xhr.responseText);
-    console.log(response);
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", `http://www.omdbapi.com/?apikey=4c73fc32&type=movie&t=${title}`, false);
+    xhttp.send();
+    const response = JSON.parse(xhttp.responseText);
     const movie = {
         Title:      response.Title,
         Year:       response.Year,

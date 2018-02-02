@@ -8,7 +8,6 @@ class Movie extends Component {
     }
     renderMovie(movie) {
         const favClass = this.props.isFavoriteMovie(movie.imdbID) ? 'fas fa-heart favorite' : 'far fa-heart favorite';
-        console.log(favClass);
         return (
             <div className="movie">
             <i className={favClass} onClick={() => this.props.toggleFavorite(movie)}></i>
@@ -48,7 +47,8 @@ class Movie extends Component {
 
     render() {
         const { movie } = this.props;
-        if(movie.Response === 'True') {
+        
+        if(movie) {
             return this.renderMovie(movie);
         }else return this.movieNotFound();
     }

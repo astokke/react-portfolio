@@ -10,6 +10,11 @@ body {
     background-color: #ecf0f1;
   }
 
+  .main {
+      border-bottom: 3px solid black;
+      padding: 1%;
+  }
+
  /* HEADER STYLES */
 .nav {
     font-size: 20px;
@@ -47,6 +52,7 @@ li {
     position: relative;
     width: 100%;
     text-align: center;
+    margin-top: 30px;
 }
 .footer-line {
     width: 80%;
@@ -227,6 +233,7 @@ li {
 .search-bar input {
     border: 2px solid black;
     height: 30px;
+    width: 40%;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
     text-align:center;
@@ -252,7 +259,6 @@ li {
     display:flex;
     flex-direction: column;
     width: 40%;
-    border: 3px solid black;
 }
 
 .movieTitle {
@@ -300,20 +306,32 @@ li {
 .favorite {
     position:absolute;
     font-size: 50px;
+    margin-top: 40px;
     color: red;
     cursor: pointer;
 }
 
+.movie-list-wrapper{
+    border-left: 3px solid black;
+    width: 30%;
+}
 
 .movie-list{
     display: flex;
     flex-wrap: wrap;
-    width: 20%;
-    border: 3px solid black;
+ 
+
 }
 
 
 .movie-item img{
     height: 150px;
     width: auto;
+    cursor:pointer;
+}
+
+.movie-list-title {
+    display: block;
+    font-size: 20px;
+    text-align: center;
 }

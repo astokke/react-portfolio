@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import { randomMovie } from '../../helpers'
+import { randomMovie } from '../../helpers';
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { term: randomMovie() };
+  constructor() {
+    super();
+    this.state = {
+        term: randomMovie()
+    }
   }
-  componentWillMount() {
-    this.props.onSearchTermChange(this.state.term);
+  componentDidMount() {
+    this.props.movieSearch(this.state.term);
   }
   render() {
     return (
       <div className="search-bar">
         <input
+          className="search-input"
           value={this.state.term}
           onChange={event => this.onInputChange(event.target.value)}
         />
@@ -22,8 +24,8 @@ class SearchBar extends Component {
   }
 
   onInputChange(term) {
-    this.setState({ term });
-    this.props.onSearchTermChange(term);
+    this.setState({term});
+    this.props.movieSearch(term);
   }
 }
 
