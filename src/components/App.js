@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Router>
+      <Router basename="/react-portfolio/">
         <div className="main">
         <Header/>
             <Switch>
